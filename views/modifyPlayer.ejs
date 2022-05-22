@@ -1,0 +1,21 @@
+<%- include('header') %>
+      <main class="main addplayer">
+
+        <div class="form-container">
+          <h3 class="main-heading">Modify Player</h3>
+
+          <form action="/modify/<%= player._id %>" method="POST" class="form-styling">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" value="<%= player.name %>" required>
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" value="<%= player.email %>" required>
+            <label for="phone">Phone</label>
+            <input type="tel" name="phone" id="phone" value="<%= player.phone %>" required>
+            <label for="racket">Racked used</label>
+            <input type="text" name="racket" id="racket" value="<%= player.racket %>" required>
+            <button type="submit" class="button-styling">Submit</button>
+          </form>
+        </div>
+
+      </main>
+<%- include('footer') %>

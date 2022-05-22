@@ -1,0 +1,18 @@
+<%- include('header') %>
+      <main class="main">
+        <h3 class="main-heading">List of Players</h3>
+
+        <div class="player-wrapper">
+          <button class="button-styling"> <a href="/playerList" class="a-links"> Sort by name default </a> </button>
+          <button class="button-styling"> <a href="/playerList/ascsorted" class="a-links"> Sort by name ascending </a> </button>
+          <button class="button-styling"> <a href="/playerList/descsorted" class="a-links"> Sort by name descending </a> </button>
+
+          <% players.forEach((player) => { %>
+            <div class="player-text-container list">
+              <p class="player-text"> <a href="/player/<%= player._id %>" class="a-links"> <%= player.name %> </a></p>
+            </div>
+          <% }); %>
+
+        </div>
+      </main>
+<%- include('footer') %>

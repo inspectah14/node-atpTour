@@ -1,0 +1,26 @@
+<%- include('header') %>
+      <main class="main player">
+        <h3 class="main-heading">Individual Player</h3>
+        <div class="player-wrapper">
+
+          <div class="player-text-container">
+            <h4 class="player-heading">Player Information</h4>
+            <p class="player-text"> <strong>Name:</strong> <%= player.name %> </p>
+            <p class="player-text"> <strong>Email:</strong> <%= player.email %> </p>
+            <p class="player-text"> <strong>Phone:</strong> <%= player.phone %> </p>
+            <p class="player-text"> <strong>Date turned pro:</strong> <%= player.dateJoined.toDateString() %> </p>
+            <p class="player-text"> <strong>Racket:</strong> <%= player.racket %> </p>
+
+            <div class="button-container">
+              <button class="button-styling"> <a href="/modifyPlayer/<%= player._id %>" class="a-links">Modify Player</a> </button>
+
+              <form action="/delete/<%= player._id %>" method="POST">
+                <button class="button-styling">Delete Player</button>
+              </form>
+            </div>
+
+          </div>
+
+        </div>
+      </main>
+<%- include('footer') %>
